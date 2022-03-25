@@ -31,5 +31,8 @@ Runtime complexity: total running time: O(n+m), where n is the size of the verti
 
 # **Timeline**
 3/28 – 4/4 data processing, BFS, and shortest path
+---------------------------------------------------
 4/5 - 4/24 A* search, testing, presentation
+---------------------------------------------------
 4/25 - 5/5 finishing algorithms and testing.
+---------------------------------------------------
