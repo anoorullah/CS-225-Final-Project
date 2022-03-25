@@ -30,9 +30,9 @@ Output: A labeling of the edges on G as discovery and cross edge.
 Runtime complexity: total running time: O(n+m), where n is the size of the vertices and m is the size of the edges.
 
 # **Timeline**
-3/28 – 4/4 data processing, BFS, and shortest path
+3/28 – 4/4: Data Processing, BFS, and shortest path
 ---------------------------------------------------
-4/5 - 4/24 A* search, testing, presentation
+4/5 - 4/24: A* search, testing, presentation
 ---------------------------------------------------
-4/25 - 5/5 finishing algorithms and testing.
+4/25 - 5/5: finishing algorithms and testing.
 ---------------------------------------------------
