@@ -30,3 +30,6 @@ since we are not children and are big boy college students. Any delays in expect
 progress should be communicated early so that team members can anticipate ahead of
 time. Failure to do so can possibly result in the issue now being brought up to the course
 staff.
+
+Signatures:
+adnann2 accepts this contract.
