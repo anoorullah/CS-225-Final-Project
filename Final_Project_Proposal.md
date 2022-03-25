@@ -8,12 +8,12 @@ Our group decided to use the OpenFlights datasets. We are referring to the sugge
 Given the OpenFlights datasets, we are interested in the BFS traversal. And our group will use the loaded graph from the dataset to implement the Dijkstra’s algorithm.
 
 ## **1.Betweenness Centrality**
-We decided to work on the shortest path algorithm. Since the datasets provide historical records of distances between each airport. By implementing this algorithm, we can check the real-world application of the theoretical algorithm.
-Input: two airports (start point, destination)
-Output: shortest path between the given two airports in terms of distance.
-Using unsorted array: O(n^2)
-MST Runtime complexity: O(nlog(n)+mlog(n))
-Fibonacci heap runtime complexity: O(nlog(n)+m)
+Tyoe in here why we decided on this algo
+Input: 
+Output: 
+Using unsorted array:
+MST Runtime complexity: 
+Fibonacci heap runtime complexity: 
 
 ## **2.Djikstra's Algorithm*
 Djikstra's Algorithm uses the distance between points and return the best path. The cost will be the distance. 
