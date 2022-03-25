@@ -1,6 +1,6 @@
-## CS 225 Data Structures
-Team Contract
-Communication
+#### CS 225 Data Structures
+# Team Contract
+## Communication
 #### Team Meetings: 
 Twice a week, Mondays and Thursdays, 6PM CST/5PM EST (each
 45-60 mins long). We will continue to use discord for our meetings as we all enjoy using
@@ -16,7 +16,7 @@ Every meeting will start off with a round robin on the progress of each member
 so far at that point, as well as ideas and topics they would like to share with the team.
 There will be a document in the repo to update if any teammates have new ideas or topics
 that need to be discussed in the next upcoming github.
-Collaboration
+## Collaboration
 #### Work Distribution: 
 Every Monday stand-up will include a portion where we assess the
 progress made the previous week, and assign/reassign equal amounts of work to each
