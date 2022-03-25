@@ -7,7 +7,7 @@ Our group decided to use the OpenFlights datasets. We are referring to the sugge
 # **Graph Algorithms**
 Given the OpenFlights datasets, we are interested in the BFS traversal. And our group will use the loaded graph from the dataset to implement the Dijkstra’s algorithm.
 
-## **1.Shortest path**
+## **1.Betweenness Centrality**
 We decided to work on the shortest path algorithm. Since the datasets provide historical records of distances between each airport. By implementing this algorithm, we can check the real-world application of the theoretical algorithm.
 Input: two airports (start point, destination)
 Output: shortest path between the given two airports in terms of distance.
@@ -15,13 +15,11 @@ Using unsorted array: O(n^2)
 MST Runtime complexity: O(nlog(n)+mlog(n))
 Fibonacci heap runtime complexity: O(nlog(n)+m)
 
-## **2.A* search**
-A* search, as an extension of the Dijkstra’s path, will also have the input of a start point and destination, and return the best path. The cost here will also be the distance. 
+## **2.Djikstra's Algorithm*
+Djikstra's Algorithm uses the distance between points and return the best path. The cost will be the distance. 
 Input: start airport, destination airport
 Output: best path between the two airports
 Runtime complexity: O(b^d).
-According to Wikipedia: In the worst case of an unbounded search space, the number of nodes expanded is exponential in the depth of the solution (the shortest path) d: O(b^d), where b is the branching factor (the average number of successors per state).
-
 
 ## **3. BFS traversal**
 We will implement the BFS traversal to determine the shortest path given a start vertex and detect cycles. 
