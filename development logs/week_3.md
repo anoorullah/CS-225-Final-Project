@@ -5,3 +5,8 @@ Finish implementing algorithms and complete presentation.
 
 #### What we achieved: 
 
+
+#### Problems we encountered:
+
+
+#### Plans for next week:
