@@ -1,7 +1,7 @@
 ## Week 3 Development Log (4/12 - 4/18)
 
 #### Goals: 
-Complete betweenness centrality and have an initial implementation of Djikstra's algorithm
+Complete djikstra's and have an initial implementation of betweeness centrality algorithm
 
 #### What we achieved: 
 
