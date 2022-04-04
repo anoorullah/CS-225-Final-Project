@@ -9,4 +9,4 @@ Complete, working BFS algorithm, at least initial implementation of betweenness 
 #### Problems we encountered:
 
 
-#### Plans for next week:
+#### Next week's plans:
