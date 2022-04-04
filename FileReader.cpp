@@ -30,7 +30,18 @@ void FileReader::readAirport(string airport) {
 }
 
 void FileReader::readRoute(string route) {
-
+    // Following same algo from airport parser for route parser
+    ifstream routeFile; // Reading in route file
+    routeFile.open(route); // Opens based off name of route file
+    string routeFound; // Will represent each route in the route file
+    int i = 0; // Variable used for iteration
+    vector<string> routeVector; // Vector storing each route
+    // getline(routeFile, routeFound); // If I included this, this would remove the first line of the file
+    // We need the first line! Use a while loop to iterate through each line of the file
+    while(getline(routeFile, routeFound)) {
+        routeVector.push_back(routeFound); // Each route is added to the end of routeVector
+        ++i; // Increase iterable variable
+    }
 }
 
 map<string, double> FileReader::getDistance() {
