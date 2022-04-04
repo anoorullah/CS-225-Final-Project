@@ -1,7 +1,7 @@
 ## Week 1 Development Log (4/19 - 4/25)
 
 #### Goals: 
-Completed Djikstra's algorithm, initial testing
+Completed betweenness centrality algorithm, initial testing
 
 #### What we achieved: 
 
