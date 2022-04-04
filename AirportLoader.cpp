@@ -68,5 +68,6 @@ double AirportLoader::findDistance(double first_ns, double first_ew, double seco
 }
 
 void AirportLoader::setWeight(double first_ns, double first_ew, double second_ns, double second_ew) {
+    // This function, along with findDistance, can be used for Djikstra and perhaps between connectedness
     weight_value = findDistance(first_ns, first_ew, second_ns, second_ew);
 }

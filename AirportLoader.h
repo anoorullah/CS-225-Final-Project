@@ -5,6 +5,7 @@
 
 using namespace std;
 
+class FileReader; // Using FileReader in AirportLoader
 class AirportLoader {
 public:
     AirportLoader(); // Constructor to set default values for all private variables
