@@ -1,4 +1,4 @@
-## Week 3 Development Log (4/25 - 5/5)
+## Week 3 Development Log (4/12 - 4/18)
 
 #### Goals: 
 Finish implementing algorithms and complete presentation.
