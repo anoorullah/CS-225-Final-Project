@@ -10,4 +10,4 @@ Adnan: I completed a very rough, initial data loader and parser (processing), wh
 As Ramadan was arriving this week, we fell behind as a team working on the project, as our preparations conflicted with our ability to start coding for this project. Our schedules also did not align well, and we were not able to meet over Zoom or in-person. We are planning to pick up more work and increase the frequency of team meetings this week in order to get back on track with the completion of this project.
 
 #### Next week's plans:
-Our plans for the next week of development is to have a completed BFS algorithm, much more well-rounded and complete data processing, and at least an initial implementation of Djikstra's algorithm.
+Our plans for the next week of development is to have a completed BFS algorithm, much more well-rounded and complete data processing, and at least an initial implementation of the betweenness centrality algorithm.
