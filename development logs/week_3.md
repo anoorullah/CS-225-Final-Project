@@ -9,4 +9,4 @@ Complete betweenness centrality and have an initial implementation of Djikstra's
 #### Problems we encountered:
 
 
-#### Plans for next week:
+#### Next week's plans:
