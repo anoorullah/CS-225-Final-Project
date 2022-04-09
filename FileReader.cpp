@@ -42,6 +42,7 @@ void FileReader::readRoute(string route) {
         routeVector.push_back(routeFound); // Each route is added to the end of routeVector
         ++i; // Increase iterable variable
     }
+    // Need to continue working to separate different parts of file
 }
 
 map<string, double> FileReader::getDistance() {
