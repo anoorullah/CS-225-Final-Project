@@ -54,6 +54,7 @@ double AirportLoader::findDistance(double first_ns, double first_ew, double seco
     // first_ew and second_ew represent longitude
     double distance = 0.0; // Return value
     double radius = 3963.0; // Radius of Earth in miles -> https://www.space.com/17638-how-big-is-earth.html#:~:text=The%20radius%20of%20Earth%20at,13%20miles%20(22%20km)
+    // Change values to radians --> MUST FINISH
     double radius_2 = 2 * radius;
     double diff_ns = (first_ns - second_ns) / 2;
     double sin_diff_ns = pow((sin(diff_ns)), 2);
