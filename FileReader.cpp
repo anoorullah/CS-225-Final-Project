@@ -1,4 +1,7 @@
 #include "FileReader.h"
+#include "Edge.h"
+#include <sstream>
+#include "Routes.h"
 
 FileReader::FileReader() {
     // Setting default values for private variables
@@ -25,7 +28,14 @@ void FileReader::readAirport(string airport) {
         }
         if(j <= 13) { // If we are within the bounds of the iteration
             continue; // continue
-        } // Otherwise, end the function
+        }
+        Route* current = new Route();
+        if(airportVector.length() != 2) {
+            current->setSrc(airportVector[4]);
+        } else {
+            current->setSrc(airportVector[5]);
+        }
+        
     }
 }
 
