@@ -6,6 +6,8 @@ Implement Data Processing, BFS
 #### What we achieved: 
 Adnan: I completed a very rough, initial data loader and parser (processing), which reads from the two separate data files (airports and routes) and also added a file which takes the spherical distance between two airports and assigns that value to the weight of that edge. We are planning to continue adding to the data processing file as we add our algorithms to this project, and I also plan to make the file clearer to understand. The AirportLoader file, which calculates the edge weight, will be used to help in our implementation of Djikstra's algorithm and perhaps betweenness centrality as well.
 
+Yousuf: Minor adjustments to Adnaan's code, added a few things. 
+
 Kamran: Implemented an edge class to create weighted and unweighted edges, and a routes class to create and compare routes. 
 
 #### Problems we encountered:
