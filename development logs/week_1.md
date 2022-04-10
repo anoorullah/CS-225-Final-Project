@@ -8,6 +8,8 @@ Adnan: I completed a very rough, initial data loader and parser (processing), wh
 
 Yousuf: Minor adjustments to Adnan's code, added a few things. 
 
+Ebaad: Shared a rough model of Djikstra's with Adnan on Saturday. Worked on organizing and communicating the roles and functions of each class with the rest of the group.
+
 Kamran: Implemented an edge class to create weighted and unweighted edges, and a routes class to create and compare routes. 
 
 #### Problems we encountered:
