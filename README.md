@@ -1,4 +1,4 @@
-# CS225-FP
+# CS225 Final Project
 
 ## Team Members: kmajid2, adnann2, ebaadss2, ymohid2
 
