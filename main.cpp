@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <string> 
 #include <unordered_map>
 #include <iomanip>
+#include <ctime> 
 
 #include "Airport.h"
 #include "airport_graph.h"
@@ -14,8 +16,10 @@ int main() {
     cout << ""<< endl;
     cout << "CS225 Final Project" << endl;
     cout << "Made by: kmajid2, adnann2, ebaadss2, ymohid2" << endl;
+
+    string input = "y"; 
     
-    while(true) {
+    while(input == "y") {
         string airportFile;
         string routesFile;
         string StartingAirport;
@@ -138,8 +142,13 @@ int main() {
         }
 
         cout << "" << endl;
-        cout << "Computation finished. Now restarting the program. "<< endl;
-        cout << "" << endl;
+        cout << "Computation finished. Would you like to run the program again? (y/n) " << endl;
+
+        cin >> input; 
+        while(input != "y" && input != "n"){
+            cout << "Your input is invalid, make sure that it is lower case and either y or n." << endl; 
+            cin >> input; 
+        }
     }
     return 0;
 }
