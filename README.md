@@ -33,7 +33,7 @@ The program will then prompt you to enter a number 0-2 to complete various BFS o
 (1) Using BFS, traverse a given number of moves of the graph from a given airport
 (2) Using BFS, traverse the graph until a destination airport from a given airport
 ```
-Now, you can simple enter airport codes (can be found online or in the airports dataset), and press enter to run the BFS traversal. The program will prompt you to input a number 0-2 after completion, but you can exit by simply using ```Ctrl+C```. 
+Now, you can simple enter airport codes (can be found online or in the airports dataset), and press enter to run the BFS traversal. Afterwards, the program will ask you whether you would like to do another traversal. 
 
 ## Testing 
 To run our tests, you can use: 
