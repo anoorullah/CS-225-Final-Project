@@ -8,6 +8,7 @@
 #include "../Airport.h"
 #include "../airport_graph.h"
 #include "../BFS.h"
+#include "../Djikstras.h"
 
 #include "../catch/catch.hpp"
 
@@ -126,4 +127,61 @@ TEST_CASE("Testing BFS_dest") {
 
     
     REQUIRE("Chicago O'Hare International Airport" == result_dest[0]);
+}
+
+TEST_CASE("Testing Djikstra with nearby airports")
+{
+    string airportFile = "airports.dat";
+    string routesFile = "routes.dat";
+    Graph airportGraph(airportFile, routesFile);
+    
+    Djikstras chicagoToNewYork(airportGraph, "Chicago O'Hare International Airport", "John F Kennedy International Airport")
+    double cToNYDistance = chicagoToNewYork.getShortestDistance();
+    vector<string> cToNYPath = chicagoToNewYork.getPathVertices();
+
+    cout << "Printing shortest path from O'Hare to JFK" << endl;
+    for(unsigned i = 0; i < cToNYPath.size(); i++){
+        cout << cToNYPath[i].getAirportName();
+        if(i != cToNYPath.size()-1)
+            cout << " --> ";
+        if(i%5 == 0 && i != 0)
+            cout << endl;
+    }
+    cout << endl;
+
+    cout << "Printing out shortest travel distance from O'Hare to JFK: " << cToNYDistance << endl;
+
+    REQUIRE(0.0 < cToNYDistance);
+
+    REQUIRE("Chicago O'Hare International Airport" == cToNYPath[0].getAirportName());
+    REQUIRE("John F Kennedy International Airport" == cToNYPath[cToNYPath.size() - 1].getAirportName());
+}
+
+TEST_CASE("Testing Djiktra with distant airports")
+{
+    string airportFile = "airports.dat";
+    string routesFile = "routes.dat";
+    Graph airportGraph(airportFile, routesFile);
+    
+    Djikstras kashgarToArusha(airportGraph, "Kashgar Airport", "Arusha Airport")
+    double kToADistance = kashgarToArusha.getShortestDistance();
+    vector<string> kToAPath = kashgarToArusha.getPathVertices();
+
+    cout << "Printing shortest path from Kashgar to Arusha" << endl;
+    for(unsigned i = 0; i < kToAPath.size(); i++){
+        cout << kToAPath[i].getAirportName();
+        if(i != kToAPath.size()-1)
+            cout << " --> ";
+        if(i%5 == 0 && i != 0)
+            cout << endl;
+    }
+    cout << endl;
+
+    cout << "Printing out shortest travel distance from Kashgar to Arusha: " << kToADistance << endl;
+
+
+    REQUIRE(0.0 < kToADistance);
+
+    REQUIRE("Kashgar Airport" == kToAPath[0].getAirportName());
+    REQUIRE("Arusha Airport" == kToAPath[kToAPath.size() - 1].getAirportName());
 }
