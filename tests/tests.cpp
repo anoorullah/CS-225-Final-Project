@@ -163,7 +163,7 @@ TEST_CASE("Testing BFS_dest") {
 //     string routesFile = "routes.dat";
 //     Graph airportGraph(airportFile, routesFile);
     
-//     Djikstras kashgarToArusha(airportGraph, "Kashgar Airport", "Arusha Airport")
+//     Djikstras kashgarToArusha(airportGraph, "Kashgar Airport", "Arusha Airport");
 //     double kToADistance = kashgarToArusha.getShortestDistance();
 //     vector<string> kToAPath = kashgarToArusha.getPathVertices();
 
