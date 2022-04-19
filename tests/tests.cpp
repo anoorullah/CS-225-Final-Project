@@ -131,6 +131,7 @@ TEST_CASE("Testing BFS_dest") {
 
  TEST_CASE("Testing Djikstra with nearby airports")
  {
+      cout << "testing how well Djikstra's algorithm works for two airports near each other" << endl;
      string airportFile = "airports.dat";
      string routesFile = "routes.dat";
      Graph airportGraph(airportFile, routesFile);
@@ -158,6 +159,7 @@ TEST_CASE("Testing BFS_dest") {
 
  TEST_CASE("Testing Djiktra with distant airports")
  {
+     cout << "testing how well Djikstra's algorithm works for two airports far from each other and fairly remote (few flights in and out of the source and the destination airports)" << endl;
      string airportFile = "airports.dat";
      string routesFile = "routes.dat";
      Graph airportGraph(airportFile, routesFile);
