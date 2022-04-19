@@ -58,7 +58,7 @@ Djikstras::Djikstras(Graph g, string StartAirport, string DestAirport) {
     // load in all airports
     unordered_map<int, Airport> airportMap = g.getVertices();
     
-    //initializing all distances to infinity, setting all nodes as unvisited, and [Not sure what previous nodes is]
+    //initializing all distances to infinity, setting all nodes as unvisited, and sets the previous node of all airports to blank
     for (auto it = airportMap.begin(); it != airportMap.end(); ++it) {
         vertices.push_back(it->second.getAirportName());
         // Set starting point distance to 0
@@ -89,24 +89,24 @@ Djikstras::Djikstras(Graph g, string StartAirport, string DestAirport) {
         vector<pair<string, double>> neighborNames;
         for (auto each : neighbors) {
             for (auto it = airportMap.begin(); it != airportMap.end(); ++it) {
-                if (each.first == it->first) {
+                if (each.first == it->first) { //If adjecent ID matches with an existing airport ID
                     neighborNames.push_back(make_pair(it->second.getAirportName(), each.second));
-                }
+                } //Neighbor names stores the name of neighboring airports and thier distance to the current airport
             }
         }
         for (auto neighbor : neighborNames) {
             if (visited[neighbor.first] == false && visited[currentNode.second] == false) {
                 double weight = neighbor.second;
-                if(weight + distances[currentNode.second] < distances[neighbor.first]) {
-                    distances[neighbor.first] = weight + distances[currentNode.second];
-                    previous_nodes[neighbor.first] = currentNode.second;
-                    Q.push(make_pair(distances[neighbor.first], neighbor.first)); 
+                if(weight + distances[currentNode.second] < distances[neighbor.first]) { // the distance of the neighbor from current + the distance of the current neighbor < the current distance value of the neighboring node
+                    distances[neighbor.first] = weight + distances[currentNode.second]; // if true, the distance value for that airport is updated and 
+                    previous_nodes[neighbor.first] = currentNode.second; // the previous airport for that neighbor is now current
+                    Q.push(make_pair(distances[neighbor.first], neighbor.first)); // The neighboring airport is now sent to the Queue to be the next current node
                 }
             }
         }
         visited[currentNode.second] = true;
     }
- 
+    // Output of the Djikstra, pretty self_explanatory
     path = distances[DestAirport];
 
     string key = DestAirport;
