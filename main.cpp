@@ -1,12 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <string> 
 #include <unordered_map>
 #include <iomanip>
-#include <ctime> 
 
 #include "Airport.h"
 #include "airport_graph.h"
+#include "Djikstras.h"
 #include "BFS.h"
 
 using namespace std;
@@ -39,6 +38,7 @@ int main() {
         cout << "(0) Using BFS, traverse all of the graph from a given airport " << endl;
         cout << "(1) Using BFS, traverse a given number of moves of the graph from a given airport" << endl;
         cout << "(2) Using BFS, traverse the graph until a destination airport from a given airport" << endl;
+        cout << "(3) Calculate the shortest path between two airports" << endl;
 
         int mode; 
         cin >> mode;
@@ -47,6 +47,7 @@ int main() {
 
         switch (mode)
         {
+            // "(0) Using BFS, traverse all of the graph from a given airport "
             case 0:{
                 validSource = false;
                 while(validSource == false){
@@ -73,7 +74,7 @@ int main() {
                 break;
             }
 
-
+            // "(1) Using BFS, traverse a given number of moves of the graph from a given airport"
             case 1:{
                 validSource = false;
                 while(validSource == false){
@@ -105,7 +106,7 @@ int main() {
                 break;
             }
 
-
+            // "(2) Using BFS, traverse the graph until a destination airport from a given airport"
             case 2:{
                 bool validAP = false;
                 while(validAP == false){
@@ -139,6 +140,55 @@ int main() {
                 } 
                 break;
             }
+
+            case 3:{
+                string start; 
+
+                cout << "Enter the name of source airport name, \nor enter 'default' to use 'Newark Liberty International Airport' as start and 'Gold Coast Airport' as end:\n";
+                
+                cin.ignore();
+                getline(std::cin, start);
+
+                if(start == "default"){
+                    Djikstras shortestpath = Djikstras(airportGraph, "Newark Liberty International Airport", "Gold Coast Airport");
+                    vector<string> path = shortestpath.getPathVertices();
+                    double distance = shortestpath.getShortestDistance();
+
+                    cout<<"Airports Visited: \n"<<endl;
+                    for (unsigned long i = 0; i < path.size(); i++) {
+                        cout << path[i];
+                        if(i != path.size()-1)
+                            cout<< " --> ";
+                        if(i%4 == 0 && i != 0)
+                            cout << "" << endl;
+                    }
+                    cout<<""<<endl;
+                    cout<<"Total Distance: "<< distance << " KM" << endl;
+                } else {
+                    cout << "Enter the end location:\n";
+                    string end; 
+                    getline(std::cin, end);
+                    Djikstras shortestpath = Djikstras(airportGraph, start, end);
+                    vector<string> path = shortestpath.getPathVertices();
+                    double distance = shortestpath.getShortestDistance();
+                    if(distance == 0.0){
+                        cout<< "One or more airport not found!"<<endl;
+                        break;
+                    }
+                    cout<<"Airports Visited: \n"<<endl;
+                    for (unsigned long i = 0; i < path.size(); i++) {
+                        cout << path[i];
+                        if(i != path.size()-1)
+                            cout<< " --> ";
+                        if(i%4 == 0 && i != 0)
+                            cout << "" << endl;
+                    }
+                    cout<<""<<endl;
+                    cout<<"Total Distance: "<< distance << " KM" << endl;
+                }
+                break;
+            }
+            
         }
 
         cout << "" << endl;
