@@ -192,7 +192,7 @@ int main() {
             }
 
             case 4:{
-                cout << "Ranking all airports using PageRank, this may take 30-60 seconds depending on your machine." << endl; 
+                cout << "Ranking all airports using PageRank, this may take up to 60 seconds depending on your machine." << endl; 
                 string airportFile = "airports.dat";
                 string routesFile = "routes.dat";
                 Graph airportGraph(airportFile, routesFile);
@@ -210,7 +210,6 @@ int main() {
                 }
                 break;
             }
-            
         }
 
         cout << "" << endl;
