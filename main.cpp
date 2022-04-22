@@ -39,8 +39,8 @@ int main() {
         cout << "(0) Using BFS, traverse all of the graph from a given airport " << endl;
         cout << "(1) Using BFS, traverse a given number of moves of the graph from a given airport" << endl;
         cout << "(2) Using BFS, traverse the graph until a destination airport from a given airport" << endl;
-        cout << "(3) Calculate the shortest path between two airports" << endl;
-        cout << "(4) PageRank" << endl;
+        cout << "(3) Use Djikstra's to calculate the shortest path between two airports" << endl;
+        cout << "(4) Use PageRank to find the n most important airports" << endl;
 
         int mode; 
         cin >> mode;
