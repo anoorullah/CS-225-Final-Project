@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 #include "Airport.h"
-
+#include "PageRank.h"
 
 using namespace std;
 
@@ -30,6 +30,8 @@ class Graph {
         unordered_map<int, Flight> adjVertWithWeight(int airportID);
         string getAPName(int ID);
         
+        //function to harvest adjmatrix from a graph obj
+        void adjMatrix(PageRank* pr_obj);
 
 
     private:

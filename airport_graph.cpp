@@ -219,3 +219,55 @@ double Graph::radianConvert(double degree)
     long double one_deg = (M_PI) / 180;
     return (one_deg * degree);
 }
+
+//traversal graph to populate adj matrix for pagerank
+void Graph::adjMatrix(PageRank *pr_obj){
+
+    //determine and set the dimention
+    int size = vertices.size();
+    pr_obj->A.resize(size,vector<double>(size));
+    pr_obj->name_list.resize(size);
+    pr_obj->num = size;
+
+
+    //initialize obj matrix
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            pr_obj->A[i][j] = 0.0;
+        }        
+    }
+
+    //populate the namelist of pagerank obj
+    int x = 0;
+    for(auto it = vertices.begin(); it != vertices.end(); ++it){
+        if(it->second.getAirportID() == 0){
+            continue;
+        }
+        pr_obj->name_list[x] = (it->second.getAirportID());
+        x++;     
+    }
+    
+
+    //check every flight of every airport
+    //put the weight into the adj matrix according to the order of the namelist
+    x = 0;
+    for(auto it = vertices.begin(); it != vertices.end(); ++it){
+        if(x == size) break;
+        if(it->second.getAirportID() == 0){
+            continue;
+        }
+
+        //check the flights of the current vertices/airport
+        for(auto flight = it->second.destAPs.begin(); flight != it->second.destAPs.end(); ++flight){
+            int y = 0;
+            //find out the proper place for the weight of the current flight according to the namelist
+            for (auto temp = pr_obj->name_list.begin(); temp != pr_obj->name_list.end(); ++temp) {
+                if (*temp == flight->second.getDestId()) break;
+                y++;
+            } 
+            if(y == size) break;
+            pr_obj->A[y][x] = flight->second.getWeight();
+        }
+        x++;
+    }
+}

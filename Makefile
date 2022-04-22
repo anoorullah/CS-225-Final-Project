@@ -4,7 +4,7 @@ TEST = test
 
 # Add all object files needed for compiling:
 EXE_OBJ = main.o
-OBJS = Airport.o main.o airport_graph.o Flight.o Djikstras.o BFS.o
+OBJS = Airport.o main.o PageRank.o airport_graph.o Flight.o Djikstras.o BFS.o
 
 # Compilation Flags
 CXX = clang++
@@ -25,8 +25,8 @@ output_msg: ; $(CLANG_VERSION_MSG)
 $(EXENAME): output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-test: output_msg catch/catchmain.cpp tests/tests.cpp airport_graph.cpp Airport.cpp BFS.cpp Djikstras.cpp Flight.cpp
-	$(LD) catch/catchmain.cpp tests/tests.cpp airport_graph.cpp Airport.cpp BFS.cpp Djikstras.cpp Flight.cpp $(LDFLAGS) -o test
+test: output_msg catch/catchmain.cpp tests/tests.cpp airport_graph.cpp Airport.cpp BFS.cpp Djikstras.cpp Flight.cpp PageRank.cpp
+	$(LD) catch/catchmain.cpp tests/tests.cpp airport_graph.cpp Airport.cpp BFS.cpp Djikstras.cpp Flight.cpp PageRank.cpp $(LDFLAGS) -o test
 
 clean:
 	-rm -f *.o $(EXENAME) test

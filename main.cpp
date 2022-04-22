@@ -4,6 +4,7 @@
 #include <iomanip>
 
 #include "Airport.h"
+#include "PageRank.h"
 #include "airport_graph.h"
 #include "Djikstras.h"
 #include "BFS.h"
@@ -39,6 +40,7 @@ int main() {
         cout << "(1) Using BFS, traverse a given number of moves of the graph from a given airport" << endl;
         cout << "(2) Using BFS, traverse the graph until a destination airport from a given airport" << endl;
         cout << "(3) Calculate the shortest path between two airports" << endl;
+        cout << "(4) PageRank" << endl;
 
         int mode; 
         cin >> mode;
@@ -185,6 +187,25 @@ int main() {
                     }
                     cout<<""<<endl;
                     cout<<"Total Distance: "<< distance << " KM" << endl;
+                }
+                break;
+            }
+
+            case 4:{
+                string airportFile = "airports.dat";
+                string routesFile = "routes.dat";
+                Graph airportGraph(airportFile, routesFile);
+                unordered_map<int, Airport> airportMap = airportGraph.getVertices();
+                if(true){
+                    PageRank *test = new PageRank();                      //create pagerank obj
+                    airportGraph.adjMatrix(test);                         //generate initial adjmatrix from graph
+                    test->makeA(test->num, 0.85);                         //finalize adjmatrix
+                    vector<double> initial = test->initial_vector();      //generate initial vector 
+                    vector<double> re = test->rank(initial, 100, false);           //perform pagerank alg, 100 iteration                        
+                    cout << "\nHow many of the most important airports do you want to print? (Enter a number): \n";
+                    int top;
+                    cin >> top; 
+                    vector<int> id_rank = test->top_airport(top);           //pickout the top top important airport        
                 }
                 break;
             }
