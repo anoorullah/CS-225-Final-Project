@@ -28,7 +28,7 @@ make exec
 ./exec 
 ```
 
-The program will then prompt you to enter a number 0-2 to complete various BFS operations: 
+The program will then prompt you to enter a number 0-4 to complete various BFS operations: 
 
 ```
 (0) Using BFS, traverse all of the graph from a given airport 
