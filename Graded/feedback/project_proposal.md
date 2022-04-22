@@ -7,11 +7,11 @@ Our group decided to use the OpenFlights datasets. We are referring to the sugge
 # **Graph Algorithms**
 Given the OpenFlights datasets, we are interested in the BFS traversal. And our group will use the loaded graph from the dataset to implement the Dijkstra’s algorithm.
 
-## **1.Betweenness Centrality**
-Betweenness Centrality Algorithm returns the shortest path between two points while going through a third point to get there.
-Input: start airport, destination airport, landmark 
-Output: best path between the two airports
-Runtime Complexity: O(n*m), where n is the size of the vertices and m is the size of the edges.
+## **1.PageRank**
+PageRank Algorithm returns the most popular airports within a route from the beginning and final destinations.
+Input: start airport, destination airport
+Output: most popular airports within the route
+Runtime Complexity: O(n+m), where n is the size of the vertices and m is the size of the edges.
 
 ## **2.Djikstra's Algorithm*
 Djikstra's Algorithm uses the distance between points and return the best path. The cost will be the distance. 
@@ -26,9 +26,9 @@ Output: A labeling of the edges on G as discovery and cross edge.
 Runtime complexity: total running time: O(n+m), where n is the size of the vertices and m is the size of the edges.
 
 # **Timeline**
-3/28 – 4/4: Data Processing, BFS, and Betweenness Centrality
+3/28 – 4/4: Data Processing, BFS
 ------------------------------------------------------------
-4/5 - 4/24: Djikstra's Algorithm, Fixing/Debugging, Testing
+4/5 - 4/24: Djikstra's Algorithm, Fixing/Debugging, Testing, PageRank
 ------------------------------------------------------------
 4/25 - 5/5: Finishing Algorithms and Presentation.
 ------------------------------------------------------------
