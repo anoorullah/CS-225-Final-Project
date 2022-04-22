@@ -28,7 +28,7 @@ make exec
 ./exec 
 ```
 
-The program will then prompt you to enter a number 0-4 to complete various BFS operations: 
+The program will then prompt you to enter a number 0-4 to complete various operations: 
 
 ```
 (0) Using BFS, traverse all of the graph from a given airport 
@@ -37,7 +37,7 @@ The program will then prompt you to enter a number 0-4 to complete various BFS o
 (3) Use Djikstra's to calculate the shortest path between two airports
 (4) Use PageRank to find the n most important airports
 ```
-Now, you can simple enter airport codes (can be found online or in the airports dataset), and press enter to run the BFS traversal. Afterwards, the program will ask you whether you would like to do another traversal. 
+Now, you can simply follow the instructions corresponding to using each algorithm. Afterwards, the program will ask you whether you would like to choose another algorithm to run.
 
 ## Testing 
 To run our tests, you can use: 
