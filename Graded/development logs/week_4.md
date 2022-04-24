@@ -1,7 +1,7 @@
 ## Week 1 Development Log (4/19 - 4/25)
 
 #### Goals: 
-Completed PageRank algorithm
+Completed PageRank Algorithm
 
 #### What we achieved:
 Adnan: Assisted Yousuf in researching PageRank algorithm and helped Kamran with the development of the algorithm. Cleaned up files and looking to add more descriptive comments.
