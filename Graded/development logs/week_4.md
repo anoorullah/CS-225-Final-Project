@@ -1,4 +1,4 @@
-## Week 1 Development Log (4/19 - 4/25)
+## Week 4 Development Log (4/19 - 4/25)
 
 #### Goals: 
 Completed PageRank Algorithm
