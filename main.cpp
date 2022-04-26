@@ -27,9 +27,29 @@ int main() {
         
         bool validDataset = false;
         
-        validDataset = true;
-        airportFile = "airports.dat";
-        routesFile = "routes.dat";
+        while(validDataset == false){
+            cout << "Enter \"default\" to construct graph using datasets from OpenFlights.org \nor enter name of airports dataset" << endl;
+            string airportIn;
+            cin >> airportIn;
+            if(airportIn != "default"){
+                airportFile = airportIn;
+                cout << "Enter name of routes dataset" << endl;
+                string routesIn;
+                cin >> routesIn;
+                string routesFile = routesIn;
+                Graph airportGraph(airportFile, routesFile);
+                
+                if(airportGraph.getVertices().size() == 0){
+                    cout << "Empty graph constructed. Please input again:" << endl;
+                }else
+                    validDataset = true;
+            }
+            else{
+                validDataset = true;
+                airportFile = "airports.dat";
+                routesFile = "routes.dat";
+            }
+        }
 
         Graph airportGraph(airportFile, routesFile);
         unordered_map<int, Airport> verticesInGraph = airportGraph.getVertices();
