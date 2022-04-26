@@ -186,3 +186,131 @@ TEST_CASE("Testing BFS_dest") {
      REQUIRE("Kashgar Airport" == kToAPath[0]);
      REQUIRE("Arusha Airport" == kToAPath[kToAPath.size() - 1]);
  }
+
+TEST_CASE("Testing Pagerank function top_airport()") { 
+    cout << "\n\n\n\n >>>>>>>>Testing Pagerank function top_airport()\n" << endl;
+    //construct a pagerank obj, manually setup the name_list and pr_result
+    PageRank *test = new PageRank(); 
+    test->name_list.resize(5);
+    test->pr_result.resize(5);
+
+    test->name_list[0] = 0;
+    test->name_list[1] = 1;
+    test->name_list[2] = 2;
+    test->name_list[3] = 3;
+    test->name_list[4] = 4;
+
+    test->pr_result[0] = 0.245;
+    test->pr_result[1] = 324.15;
+    test->pr_result[2] = 23.21;
+    test->pr_result[3] = 56.33;
+    test->pr_result[4] = 4;
+
+    //pick out the top 3 airport's id
+    vector<int> rank = test->top_airport(3); 
+    REQUIRE(1 == rank[0]);
+    REQUIRE(3 == rank[1]);
+    REQUIRE(2 == rank[2]);
+}
+
+
+TEST_CASE("Testing Pagerank function makeA()") {
+    PageRank *test = new PageRank();
+
+    int size = 2;
+    test->A.resize(size,vector<double>(size));
+
+    //to test normalize(column sum == 1)
+    test->A[0][0] = 0.0;
+    test->A[1][0] = 0.0;
+
+    //to test normalize and dampling factor
+    test->A[0][1] = 4.0;   
+    test->A[1][1] = 6.0;  
+
+    test->name_list.resize(size);
+    test->num = size;
+
+    test->PageRank::makeA(size, 0.85);
+    REQUIRE(0.5 == test->A[0][0]);
+    REQUIRE(0.5 == test->A[1][0]);
+    REQUIRE(1 == test->A[0][1] + test->A[1][1]);
+}
+
+
+TEST_CASE("Testing Pagerank function rank()") { 
+    cout << "\n\n\n\n >>>>>>>>Testing Pagerank function rank()\n" << endl;
+    PageRank *test = new PageRank();
+
+    int size = 10;
+    test->A.resize(size,vector<double>(size));
+
+    test->name_list.resize(size);
+    test->num = size;
+
+    //set only one edge from id:1 to id:0. Thus the id:0 should be the most important
+    for(int i = 0; i < size; i++){
+        test->name_list[i] = i;
+        for(int j = 0; j < size; j++){
+            test->A[i][j] = 0.0;
+        }        
+    }
+    test->A[0][1] = 10;
+
+    test->PageRank::makeA(size, 0.85);
+    vector<double> initial = test->PageRank::initial_vector();
+    vector<double> temp = test->PageRank::rank(initial, 50, true);
+    vector<int> rank = test->top_airport(1); 
+    REQUIRE(0 == rank[0]);
+}
+
+
+TEST_CASE("Testing Pagerank implementation on a subset of the whole data set") { 
+    //adjust the precision of the weight of edge to be shown
+    cout << setprecision(10);
+    cout << "\n\n\n\n >>>>>>>>Testing constructing graph from a subset of data and pagerank on the data set\n" << endl;
+    string airportFile = "tests/airport_sample.dat";
+    string routesFile = "tests/routes_sample.dat";
+    Graph airportGraph(airportFile, routesFile);
+    unordered_map<int, Airport> airportMap = airportGraph.getVertices();
+
+    //printing out all flights departing from O'Hare, Newark and Beijing airport
+    for(auto it = airportMap.begin(); it != airportMap.end(); ++it){
+        cout << "Airport ID: " << it->first <<endl;
+        if(it->first == 3830 || it->first == 3494 || it->first == 3364){
+            cout << "Airport ID: " <<it->second.getAirportID() << " ";
+            cout << "Airport Name: " <<it->second.getAirportName() << endl;
+
+            unordered_map<int, Flight> adjList = it->second.destAPs;
+            for(auto it = adjList.begin(); it != adjList.end(); ++it){
+                cout << "Source ID: " << it->second.getSourceId() << " ";
+                cout << "Destination ID: " << it->second.getDestId() << " ";
+                cout << "Flight weight: " << it->second.getWeight() << endl;
+            }
+        }
+    }
+    cout << "\n";
+    PageRank *test = new PageRank();                      //create pagerank obj
+    airportGraph.adjMatrix(test);                         //generate initial adjmatrix from graph
+    test->makeA(test->num, 0.85);                         //finalize adjmatrix
+    test->print_adjmatrix();                              //print adj_m
+    vector<double> initial = test->initial_vector();      //generate initial vector 
+    vector<double> re = test->rank(initial, 100, true);           //perform pagerank alg, 5 iteration
+    test->print_result();                                 //print result
+    vector<int> id_rank = test->top_airport(5);           //pickout the top 5 important airport
+
+    REQUIRE(3364 == id_rank[0]);
+    REQUIRE(3728 == id_rank[1]);
+}
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
