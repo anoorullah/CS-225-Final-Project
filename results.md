@@ -54,4 +54,4 @@ vector with the adjacent matrix, the result vector will approach a stable state,
 which then can be used to rank the importance of the airports.
 To validate our implementation, a subset of the flight data was
 gathered. After running the implementation
-with the whole data set, our most important airport is Paris-Charles de Gaulle Airport. This result is also inline with reality. Thus, we conclude that our implementation of the Page Rank algorithm meets our expectations.
+with the whole data set, our most important airport is Paris-Charles de Gaulle Airport. This result is also inline with reality. Thus, we conclude that our implementation of the Page Rank algorithm meets our expectations. The runtime of Page Rank is O(kn), where k is the number of iterations ran.
