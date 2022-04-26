@@ -4,7 +4,7 @@
 
 ## Introduction
 For our final project, we used the [OpenFlights](https://openflights.org/data.html) dataset and routes data to make a graph that uses airports as vertices and routes as edges. We used Djikstra's to find the shortest path between two airports and PageRank to find the most important airports. 
-* [Written Report](https://github.com/kamranmajid41/CS225-FP/blob/main/results.md)
+* [Written Report](https://github-dev.cs.illinois.edu/cs225-sp22/adnann2-kmajid2-ebaadss2-ymohid2/blob/main/results.md)
 * [Final Presentation Slides](https://github-dev.cs.illinois.edu/cs225-sp22/adnann2-kmajid2-ebaadss2-ymohid2/blob/main/presentation.pdf)
 * [Final Presentation Video](https://drive.google.com/drive/folders/1hbNmRiDEHXUxzFHZvPjqraUjcEBjbdRp?usp=sharing)
 
