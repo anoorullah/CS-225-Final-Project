@@ -10,7 +10,7 @@ For our final project, we used the [OpenFlights](https://openflights.org/data.ht
 * [Final Presentation Video](https://drive.google.com/drive/folders/1hbNmRiDEHXUxzFHZvPjqraUjcEBjbdRp?usp=sharing)
 ### Navigating the Codebase
 * All of the implemented algorithms, traversals, and the data loader can be found in the root of the directory
-* [Tests](https://github-dev.cs.illinois.edu/cs225-sp22/adnann2-kmajid2-ebaadss2-ymohid2/tree/main/tests)
+* [Tests](https://github-dev.cs.illinois.edu/cs225-sp22/adnann2-kmajid2-ebaadss2-ymohid2/tree/main/tests) can be found in the tests folder
 * The data used can be found in the airports.dat and routes.dat files
 
 ## Description of the Files in this Repository
