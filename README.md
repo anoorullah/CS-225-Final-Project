@@ -4,6 +4,9 @@
 
 ## Introduction
 For our final project, we used the [OpenFlights](https://openflights.org/data.html) dataset and routes data to make a graph that uses airports as vertices and routes as edges. We used Djikstra's to find the shortest path between two airports and PageRank to find the most important airports. 
+* [Written Report](https://github.com/kamranmajid41/CS225-FP/blob/main/results.md)
+* [Final Presentation Slides](https://github.com/kamranmajid41/CS225-FP/blob/main/presentation.pdf)
+* [Final Presentation Video](https://drive.google.com/drive/folders/1hbNmRiDEHXUxzFHZvPjqraUjcEBjbdRp?usp=sharing)
 
 ## Description of the Files in this Repository
 * Flight: this class is used to construct edges between two airports and configure weights to be the distance between them. 
