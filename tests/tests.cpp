@@ -302,15 +302,3 @@ TEST_CASE("Testing Pagerank implementation on a subset of the whole data set") {
     REQUIRE(3364 == id_rank[0]);
     REQUIRE(3728 == id_rank[1]);
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
